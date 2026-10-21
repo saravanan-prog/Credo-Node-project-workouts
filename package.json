@@ -1,0 +1,22 @@
+{
+  "name": "teaching-app",
+  "version": "1.0.0",
+  "description": "teaching and learning purpose",
+  "homepage": "https://github.com/saravanan-prog/Credo-Node-project-workouts#readme",
+  "bugs": {
+    "url": "https://github.com/saravanan-prog/Credo-Node-project-workouts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saravanan-prog/Credo-Node-project-workouts.git"
+  },
+  "license": "MIT",
+  "author": "Saravanan",
+  "type": "commonjs",    
+  "main": "app.js",
+  "scripts": {
+    "test": "node test",
+    "start" : "node app.js",
+    "dev" : "node app.js"
+  }
+}
