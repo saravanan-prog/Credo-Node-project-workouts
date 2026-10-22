@@ -1,0 +1,21 @@
+{
+  "name": "node-js-workout",
+  "version": "1.0.0",
+  "description": "learning node js",
+  "homepage": "https://github.com/saravanan-prog/Credo-Node-project-workouts#readme",
+  "bugs": {
+    "url": "https://github.com/saravanan-prog/Credo-Node-project-workouts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saravanan-prog/Credo-Node-project-workouts.git"
+  },
+  "license": "ISC",
+  "author": "Saravanan",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start" : "node app.js"
+  }
+}
