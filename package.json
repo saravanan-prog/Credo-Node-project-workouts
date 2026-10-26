@@ -12,7 +12,7 @@
   },
   "license": "ISC",
   "author": "",
-  "type": ": module",
+  "type": ": commonJS",
   "main": "app.js",
   "scripts": {
     "test": "node app.js",

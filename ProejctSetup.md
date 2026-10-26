@@ -14,6 +14,6 @@ Step 1:
   keywords:                       : ""
   author                          : Saravanan Durai
   license: (ISC)                  : 
-  type: (commonjs)                : module
+  type: (commonjs)                : commonJS
 
 ```
