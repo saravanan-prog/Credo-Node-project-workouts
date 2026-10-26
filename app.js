@@ -1,12 +1,11 @@
-const { getCurrentDirectory, getCurrentFileDirectory }  = require("./module/globalObject")
-const sumOfResult = require("./module/Calculator")
+import { getOsPlatform,getCpuArch} from "./module/OsInofrmation.js";
+import { getBaseName, getExtName } from "./module/PathHelper.js";
 
 
-const directoryName = getCurrentDirectory()
-const fileDirectory = getCurrentFileDirectory()
-const additionResult   = sumOfResult(100,100)
+const filePath = "C:/Developement/credo-systems-courses/syllabus/saravanan.txt"
 
+const basename = getBaseName(filePath)
+const extname  = getExtName(filePath)
 
-console.log("directoryName====>",directoryName)
-console.log("fileDirectory====>",fileDirectory)
-console.log("additionResult====>",additionResult)
+console.log("Base Name ===>",basename)
+console.log("extname ===>",extname)
