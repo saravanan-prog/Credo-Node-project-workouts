@@ -1,0 +1,21 @@
+{
+  "name": "node-js-workout",
+  "version": "2.0.0",
+  "description": "\"Builidng editing testing\"",
+  "homepage": "https://github.com/saravanan-prog/Credo-Node-project-workouts#readme",
+  "bugs": {
+    "url": "https://github.com/saravanan-prog/Credo-Node-project-workouts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saravanan-prog/Credo-Node-project-workouts.git"
+  },
+  "license": "ISC",
+  "author": "Saravanan",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test app.js",
+    "start" : "node app.js"
+  }
+}
