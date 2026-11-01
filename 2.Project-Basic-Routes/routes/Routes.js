@@ -22,6 +22,7 @@ export default function  Routes(req) {
                 resolve(response)
             })
         })
-        return promise 
+       return promise
     }
 }
+    

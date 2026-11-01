@@ -1,7 +1,7 @@
 import http from 'http'
 import Routes from './routes/Routes.js'
 
-const server = http.createServer(async (req, res) => {
+const server = http.createServer( async (req, res) => {
     res.writeHead(200, {"content-Type":"application/json"})
 
     try {
