@@ -4,10 +4,14 @@ export default  function Routes(req, method) {
 
     if(req.url ==="/" && req.method ==="GET"){
      let promise = new Promise((resolve,reject)=>{
-        resolve("Success")
+        resolve("Hello welcome to nodejs endpoint")
      })
 
      return promise
+    }
+    if(req.url==='/all-user-list' && req.method==='GET'){
+        let userData = getUsers()
+        return userData
     }
 
     if(req.url ==='/add-user' && req.method==='POST'){
@@ -18,11 +22,12 @@ export default  function Routes(req, method) {
                 body += chunk
             })
             req.on("end",(chunk)=>{
-                let data = addUser(body)
+                body = JSON.parse(body)
+                const userData = addUser(body)
                 let responseData = {
                     statusCode : 200,
                     statusMessage: "success",
-                    data : data
+                    data : userData
                 } 
                 resolve(responseData)
             })

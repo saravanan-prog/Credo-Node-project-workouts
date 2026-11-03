@@ -5,6 +5,7 @@ export const getUsers = () => {
 }
 
 export const addUser = (user) => {
+    
     UserList.push(user)
     return UserList
 }
