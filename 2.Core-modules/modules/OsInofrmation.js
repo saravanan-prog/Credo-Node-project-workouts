@@ -1,4 +1,10 @@
 import os from 'os'
 
-export const getOsPlatform = () => "Your os Platform is====>" +  os.platform()
-export const getCpuArch = () => "Your Cpu Arch is ====>" + os.arch()
+export const getOsPlatform = () => {
+    const osInformation = "Your os Platform is====>" +  os.platform()
+    return osInformation
+}
+export const getCpuArch = () => {
+    const arch = "Your Cpu Arch is ====>" + os.arch()
+    return arch
+}
