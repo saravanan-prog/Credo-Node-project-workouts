@@ -8,20 +8,18 @@ export default function Routes(req) {
     }
 
     if (req.url === '/add-user' && req.method === 'POST') {
+        
         let promise = new Promise((resolve, reject) => {
             let body = ""
             req.on('data', (chunk) => {
                 body += chunk
             })
             req.on('end', (chunk) => {
-                console.log("Body====>", body)
-                let response = {
-                    statusCode: 200,
-                    statusMessage: "User Added Success",
-                    data: [body]
-                }
+                console.log("body====>",body)
+                const response = JSON.parse(body)
                 resolve(response)
             })
+            resolve("POST Method reached Success")
         })
         return promise
     }
@@ -34,10 +32,27 @@ export default function Routes(req) {
                 body += chunk
             })
             req.on('end', (chunk) => {
+                let response = {
+                    body : body = JSON.parse(body),
+                    paramID : paramId
+                }
+                resolve(resonse)
+            })
+        })
+        return promise
+    }
+    if (req.url.startsWith('/update-user/') && req.method === 'PATCH') {
+        let promise = new Promise((resolve, reject) => {
+            const paramId = req.url.split("/")[2]
+            var body = ""
+            req.on('data', (chunk) => {
+                body += chunk
+            })
+            req.on('end', (chunk) => {
                 body = JSON.parse(body)
                 let resonse = {
                     statuCode:200,
-                    statusMessage: "updated successfully"
+                    statusMessage: "Path Modified Success"
                 }
                 resolve(resonse)
             })
