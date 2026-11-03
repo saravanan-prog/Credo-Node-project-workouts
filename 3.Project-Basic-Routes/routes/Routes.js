@@ -62,8 +62,6 @@ export default function Routes(req) {
         return promise
     }
 
-   
-
     if(req.url.startsWith("/remove-product/") && req.method === "DELETE"){
         const paramId = req.url.split('/')[2]
         const respone = {
