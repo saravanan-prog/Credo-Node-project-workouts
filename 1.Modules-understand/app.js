@@ -1,4 +1,6 @@
-import { getCustomerList } from "./CustomersModule"
+import { getCustomerList } from "./customers.module.js"
 
 
-getCustomerList()
+const result = getCustomerList()
+
+console.log("Result =====>",result)

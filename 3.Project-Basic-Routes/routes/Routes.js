@@ -19,7 +19,6 @@ export default function Routes(req) {
                 const response = JSON.parse(body)
                 resolve(response)
             })
-            resolve("POST Method reached Success")
         })
         return promise
     }
@@ -32,11 +31,12 @@ export default function Routes(req) {
                 body += chunk
             })
             req.on('end', (chunk) => {
+                console.log("body===>",body,"paramId===>",paramId)
                 let response = {
-                    body : body = JSON.parse(body),
+                    body :  JSON.parse(body),
                     paramID : paramId
                 }
-                resolve(resonse)
+                resolve(response)
             })
         })
         return promise
@@ -64,7 +64,7 @@ export default function Routes(req) {
 
    
 
-    if(req.url.startsWith("/products/") && req.method === "DELETE"){
+    if(req.url.startsWith("/remove-product/") && req.method === "DELETE"){
         const paramId = req.url.split('/')[2]
         const respone = {
             statusCode:200,
