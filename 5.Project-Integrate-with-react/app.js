@@ -1,26 +1,42 @@
+
 import http from 'http'
 import Routes from './routes/Routing.js'
 
 const server = http.createServer(async (req, res) => {
-    
 
-    res.setHeader("Access-Control-Origin","*")
-    res.setHeader("Access-Control-Methods","GET,POST,PUT,DELETE")
-    res.setHeader("Access-Control-Headers","Content-Type")
-    res.setHeader("Content-Type", "application/json");
+    // CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE")
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type")
+
+    // Handle browser preflight request
+    if (req.method === "OPTIONS") {
+        res.writeHead(204)
+        return res.end()
+    }
 
     try {
+
         const response = await Routes(req)
-        console.log("response=============>",)
-        
-        res.writeHead(200, {"content-Type":"application/json"})
-        res.write(JSON.stringify(response))
-        res.end()
+
+        if (response === undefined) {
+            res.writeHead(404)
+            return res.end(JSON.stringify({
+                message: "Route returned undefined"
+            }))
+        }
+
+        res.writeHead(response.statusCode || 200)
+        res.end(JSON.stringify(response))
+
     }
-    catch(error){
-        console.log("error::::",error)
+    catch (error) {
+
+        console.log("Error:", error)
     }
 
 })
 
-server.listen(8000, () => console.log("Your current port number is 8000"))
+server.listen(8000, () => {
+    console.log("Server running on port 8000")
+})
