@@ -1,0 +1,17 @@
+[
+    {
+        "customer_id":1,
+        "customer_name":"Saravanan",
+        "customer_address":"2nd cross st, velachery chennai"
+    },
+    {
+        "customer_id":2,
+        "customer_name":"Rajesh",
+        "customer_address":"2nd cross st, velachery chennai"
+    },
+    {
+        "customer_id":3,
+        "customer_name":"vimal",
+        "customer_address":"2nd cross st, adhambakkam chennai"
+    }
+]

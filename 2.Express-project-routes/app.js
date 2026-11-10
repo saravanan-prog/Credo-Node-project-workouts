@@ -3,10 +3,9 @@ import { appRouter } from './routes/MainRoute.js'
 
 const app = express() 
 const PORT = 8080
-
 app.use(express.json())
 
-appRouter.use('/',appRouter)  //middle-ware
+app.use('/',appRouter)  //middle-ware
 
 
 app.listen(PORT,
