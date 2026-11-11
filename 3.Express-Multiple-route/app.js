@@ -8,7 +8,7 @@ app.use(express.json())
 
 /*route calling  */
 app.use("/",mainRouter)
-app.use("/product",productRoute)
+app.use("/products",productRoute)
 app.use('/users',userRoute)
 
 

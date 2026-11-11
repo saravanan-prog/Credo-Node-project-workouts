@@ -9,12 +9,13 @@ userRoute.get("/",(req,res)=>{
 
 userRoute.post("/add-user",(req,res)=>{
 
-    console.log("req params====>",req.body)
+    console.log("req body====>",req.body)
 
     users.push(req?.body)
     res.send(users)
 })
 
+/* http://localhost:8000/find-user/101  */
 userRoute.get("/find-user/:id",(req,res)=>{
     
     const requestid = req.params.id
@@ -23,6 +24,5 @@ userRoute.get("/find-user/:id",(req,res)=>{
 
     console.log("findUser",findUser)
 
-    
     res.send(findUser)
 })
