@@ -1,11 +1,11 @@
 import express from 'express'
+import { appRouter } from './routes/MainRoute.js'
 
 const app = express() 
 const PORT = 8080
+app.use(express.json())
 
-app.get("/",(req,res)=>{
-    res.send("Hello i am express js")
-})
+app.use('/',appRouter)  //middle-ware
 
 
 app.listen(PORT,
