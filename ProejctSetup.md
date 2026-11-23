@@ -1,6 +1,5 @@
 ## Project Setup
 
-Step 1:
 
 > npm init
 
@@ -17,3 +16,9 @@ Step 1:
   type: (commonjs)                : module
 
 ```
+
+(or)
+
+> npm init -y
+
+automatically setup triggred.
