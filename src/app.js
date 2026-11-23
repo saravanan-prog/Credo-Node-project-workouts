@@ -1,7 +1,12 @@
 import express from 'express'
-
 const app = express() 
-const PORT = 8080
+app.use(express.json())
+
+import dotenv from 'dotenv'
+dotenv.config()
+
+
+const PORT = process.env.PORT
 
 app.get("/",(req,res)=>{
     res.send("Hello i am express js")
