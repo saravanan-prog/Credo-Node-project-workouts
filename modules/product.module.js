@@ -21,3 +21,7 @@ const products = [
 export const getAllproductList = () => {
     return products
 }
+
+export const getSingleProdct = (id) => {
+    return products.filter(value => value.productID === id )
+}
