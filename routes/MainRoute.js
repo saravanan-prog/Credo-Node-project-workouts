@@ -1,23 +1,26 @@
 import express from 'express'
-export const appRouter =  express.Router()
+export const Router =  express.Router()
 
 
-appRouter.get("/",(req,res)=>{
+
+
+
+Router.get("/",(req,res)=>{
     res.send("Main route reached")
 })
 
-appRouter.post("/add-user",(req,res)=>{
-    res.send("Post method add-user is reached")
+Router.get('/user/:id',(req,res)=>{
+   
+    const {id,name} = req.params
+    
+    res.send("Parameterized Route")
 })
 
-appRouter.put("/update-user",(req,res)=>{
-    res.send("put method update-user is reached")
-})
+Router.get('/user/:id/:name',(req,res)=>{
+   
+    const {id,name} = req.params
 
-appRouter.patch("/update-user",(req,res)=>{
-    res.send("patch method update-user is reached")
-})
-
-appRouter.delete("/remove-user",(req,res)=>{
-    res.send("delete method remove-user is reached")
+    console.log("id====>",id)
+    
+    res.send("Parameterized route")
 })
