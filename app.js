@@ -1,13 +1,16 @@
 import express from 'express'
-import { appRouter } from './routes/MainRoute.js'
+import { mainRouter } from './routes/MainRoute.js'
+import { productRoute } from './routes/ProductRoute.js'
+import { userRoute } from './routes/UserRoute.js'
 
-const app = express() 
-const PORT = 8080
+const app = express()
 app.use(express.json())
 
-app.use('/',appRouter)  //middle-ware
+/*route calling  */
+app.use("/",mainRouter)
+app.use("/products",productRoute)
+app.use('/users',userRoute)
 
 
-app.listen(PORT,
-    ()=> console.log("Your port is ready===>",PORT)
-)
+const PORT = 8000
+app.listen(PORT,() =>  console.log("Your port is Ready",PORT))
