@@ -1,16 +1,30 @@
 import express from 'express'
-import { mainRouter } from './routes/MainRoute.js'
-import { productRoute } from './routes/ProductRoute.js'
-import { userRoute } from './routes/UserRoute.js'
+import cors from 'cors'
+import  productRoute  from './routes/product.route.js'
 
 const app = express()
 app.use(express.json())
-
-/*route calling  */
-app.use("/",mainRouter)
-app.use("/products",productRoute)
-app.use('/users',userRoute)
+ app.use(cors())
 
 
-const PORT = 8000
-app.listen(PORT,() =>  console.log("Your port is Ready",PORT))
+
+
+/* Routing */
+app.use('/products',productRoute)
+
+
+
+
+/* Error - Middleware */
+app.use((req,res)=>{
+    const response = {
+        statusCode : 404,
+        statusMessage: "Url not found"
+    }
+
+    res.status(400).send(response)
+})
+
+
+const Port = 8000
+app.listen(Port,()=> console.log("Your Port is ready",Port))
