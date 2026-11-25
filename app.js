@@ -1,11 +1,24 @@
 import express from 'express'
+import dotenv from 'dotenv'
 
-const app = express() 
-const PORT = 8080
+import productRoute from './src/routes/product.route.js'
 
-app.get("/",(req,res)=>{
-    res.send("Hello i am express js")
-})
+/* bulit in Middle ware */
+const app =  express()
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+/* Thid party middle ware */
+dotenv.config()
+
+
+/* Read Environment Variables */
+const PORT = process.env.PORT_NUMBER
+
+
+
+/* Router middlewares  */
+app.use("/",productRoute)
 
 
 app.listen(PORT,
