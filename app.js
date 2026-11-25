@@ -5,13 +5,13 @@ app.use(express.json())
 import dotenv from 'dotenv'
 dotenv.config()
 
+import  MainRouter   from './src/routes/mainRoute.js'
 
-const PORT = process.env.PORT
+/* Env file read data */
+const PORT = process.env.PORT_NUMBER
 
-app.get("/",(req,res)=>{
-    res.send("Hello i am express js")
-})
-
+/*Route middle-ware */
+app.use('/',MainRouter)
 
 app.listen(PORT,
     ()=> console.log("Your port is ready===>",PORT)
