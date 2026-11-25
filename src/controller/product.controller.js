@@ -11,3 +11,9 @@ export const getAllProducts = async (req,res) => {
         }
     )
 }
+
+export const addProduct = (req,res) => {
+    
+    console.log("req====>",req.body)
+    res.send("Product added success")
+}

@@ -18,7 +18,7 @@ const PORT = process.env.PORT_NUMBER
 
 
 /* Router middlewares  */
-app.use("/",productRoute)
+app.use("/products",productRoute)
 
 
 app.listen(PORT,
