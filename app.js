@@ -1,7 +1,7 @@
 import express from 'express'
 
 const app = express() 
-const PORT = 8080
+const PORT = 8000
 
 app.get("/",(req,res)=>{
     res.send("Hello i am express js")
@@ -9,5 +9,5 @@ app.get("/",(req,res)=>{
 
 
 app.listen(PORT,
-    ()=> console.log("Your port is ready===>",PORT)
+    ()=> console.log("saravanan Your port is ready===>",PORT)
 )
