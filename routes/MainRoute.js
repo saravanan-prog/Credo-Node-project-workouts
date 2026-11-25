@@ -1,8 +1,6 @@
 import express from 'express'
-export const Router =  express.Router()
 
-
-
+const Router =  express.Router()
 
 
 Router.get("/",(req,res)=>{
@@ -24,3 +22,5 @@ Router.get('/user/:id/:name',(req,res)=>{
     
     res.send("Parameterized route")
 })
+
+export default Router
